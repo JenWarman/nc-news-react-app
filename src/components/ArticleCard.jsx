@@ -1,5 +1,8 @@
-export default function ArticleCard() {
+export default function ArticleCard({ article }) {
+console.log(article)
     return (
-        <p>article card</p>
+        <div className="article-card">
+            <p>hello</p>
+        </div>
     )
 }

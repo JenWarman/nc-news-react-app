@@ -1,5 +1,7 @@
 export default function SearchArticles() {
-    return (
-        <p>search articles</p>
-    )
+  return (
+    <div className="search">
+      <p>search articles</p>
+    </div>
+  );
 }
