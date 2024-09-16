@@ -29,15 +29,14 @@ export default function ListArticles() {
 
   return (
     <div className="card-container">
-      <ul className="article-list-item">
-        {!isLoading ? (
-          articles.map((article) => {
-            return <ArticleCard key={article.article_id} article={article} />;
-          })
-        ) : (
-          <p>articles here...</p>
-        )}
-      </ul>
+      {!isLoading ? (
+        articles.map((article) => {
+          return <ArticleCard key={article.article_id} article={article} />;
+        })
+      ) : (
+        <p>articles here...</p>
+      )}
+      <SingleArticleCard articles={articles} />
     </div>
   );
 }

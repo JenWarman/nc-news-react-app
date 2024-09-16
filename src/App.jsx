@@ -5,22 +5,22 @@ import Nav from "./components/Nav";
 import ListArticles from "./components/ListArticles";
 import UserLogin from "./components/UserLogin";
 import "bootstrap/dist/css/bootstrap.min.css";
-import {Routes, Route} from 'react-router-dom'
+import { Routes, Route } from "react-router-dom";
 import SingleArticleCard from "./components/SingleArticleCard";
 
 function App() {
   return (
-    <>
+    <div className="app">
       <UserLogin />
       <Header />
       <Nav />
       <Routes>
-        <Route path="/" element={<ListArticles/>}></Route>
+        <Route path="/" element={<ListArticles />}></Route>
         <Route path="/:article_id" element={<SingleArticleCard />}></Route>
       </Routes>
       <ListArticles />
       <Footer />
-    </>
+    </div>
   );
 }
 
