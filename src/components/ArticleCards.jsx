@@ -1,7 +1,9 @@
 import Card from "react-bootstrap/Card";
+import SingleArticleCard from "./SingleArticleCard";
 
 export default function ArticleCards({ article }) {
   return (
+    <>
     <div className="article-card">
       <Card className="item-card" style={{ width: "18rem" }}>
         <Card.Img variant="top" src={article.article_img_url} />
@@ -19,7 +21,9 @@ export default function ArticleCards({ article }) {
           <Card.Text>{article.topic}</Card.Text>
           <Card.Text>{article.created_at}</Card.Text>
         </Card.Body>
-      </Card>
+      </Card>  
     </div>
+    <SingleArticleCard key={article.article_id} article={article} />
+    </>
   );
 }

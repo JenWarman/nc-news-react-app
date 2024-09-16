@@ -1,6 +1,7 @@
 import ArticleCard from "./ArticleCards";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import SingleArticleCard from "./SingleArticleCard";
 
 export default function ListArticles() {
   const [articles, setArticles] = useState([]);
