@@ -1,5 +1,4 @@
 import Card from "react-bootstrap/Card";
-import SingleArticleCard from "./SingleArticleCard";
 import { Link } from "react-router-dom";
 
 export default function ArticleCards({ article }) {
@@ -9,7 +8,7 @@ export default function ArticleCards({ article }) {
         <Card className="item-card" style={{ width: "18rem" }}>
           <Card.Img variant="top" src={article.article_img_url} />
           <Card.Body>
-            <Link to="//:article_id">
+            <Link to={'/article/'+article.article_id}>
               <Card.Title>{article.title}</Card.Title>
             </Link>
             <section className="votes-and-likes">
