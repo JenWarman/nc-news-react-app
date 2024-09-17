@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import ListComments from "./ListComments";
 
 export default function SingleArticleCard() {
   const [articleById, setArticleById] = useState([]);
@@ -20,7 +21,7 @@ export default function SingleArticleCard() {
       .then((data) => {
         setIsLoading(false);
         setIsError(false);
-        console.log(data[0]);
+        // console.log(data[0]);
         setArticleById(data[0]);
       })
       .catch((error) => {
@@ -46,6 +47,7 @@ export default function SingleArticleCard() {
           <p id="topic">{articleById.topic}</p>
         </div>
       </div>
+      <ListComments article_id={article_id}/>
     </>
   );
 }
