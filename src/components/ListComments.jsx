@@ -30,9 +30,9 @@ export default function ListComments({ article_id }) {
   <>
   <div>
   <h3 id="comments-header">Comments</h3>
-    {comments.map((comment) => {
+    {comments.length >= 1 ?comments.map((comment) => {
         return <CommentCard key={comment.id} comment={comment} />
-    })}
+    }): (<p>There are not comments for this post yet.</p>)}
   </div>
   </>
   )

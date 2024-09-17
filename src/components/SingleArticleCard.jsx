@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 export default function SingleArticleCard() {
   const [articleById, setArticleById] = useState([]);
+  const [votes, setVotes] = useState(0);
   const { article_id } = useParams();
 
   useEffect(() => {
@@ -24,10 +25,21 @@ export default function SingleArticleCard() {
   const readableDate = new Date(articleById.created_at);
   const formatDate = readableDate.toDateString();
 
+  const handleClick = (event) => {
+    console.log(event)
+    event.preventDefault();
+    setVotes(votes => votes +1);
+  }
+  
+  const handlSubmit = (event) => {
+    console.log(event)
+  }
+  
+
   return (
     <>
     <div id="back-arrow">
-    <Link to={'/'}><i class="fa-sharp fa-solid fa-arrow-left"></i></Link>
+    <Link to={'/'}><i className="fa-sharp fa-solid fa-arrow-left"></i></Link>
     </div>
       <div className="article-container">
         <div className="article">
@@ -39,6 +51,12 @@ export default function SingleArticleCard() {
           </div>
           <p id="article-body">{articleById.body}</p>
           <p className="topic">{articleById.topic}</p>
+          <div id="article-votes-container">
+          <p>{votes}</p>
+          <div onSubmit={handlSubmit}> 
+         <button onClick={handleClick}><i className="fa-solid fa-heart"></i></button>
+          </div>
+          </div>
         </div>
       </div>
       <ListComments article_id={article_id}/>
