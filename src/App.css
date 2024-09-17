@@ -33,12 +33,7 @@
   margin: 1rem;
   align-content: center;
 }
-/* .card-body {
-  background-color: bisque;
-  flex-grow: 1;
-  align-content: center;
-  text-align: center;
-} */
+
 .footer {
   background-color: rgb(212, 209, 209);
   padding: 10px;
@@ -52,12 +47,6 @@
 .votes-and-likes {
   display: flex;
 }
-/* .card.body {
-  background-color: aqua;
-} */
-/* #votes {
-  ap
-} */
 
 .fa-solid {
   padding: 5px;
