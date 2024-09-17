@@ -68,13 +68,14 @@
 
 .author-and-date {
   display: flex;
-  border: solid black 3px;
-  padding: 10px;
+  font-weight: lighter;
 }
 
 .author-or-date {
-  padding: 10px; 
-  
+  display: flex;
+  padding: 10px;
+  font-weight: lighter;
+  text-align: center;
 }
 
 .article-container {
@@ -91,28 +92,41 @@
   text-align: center;
   width: 18rem;
 }
- #article-img {
-  width: 100%
- }
+#article-img {
+  width: 100%;
+}
 
- #article-body {
+#article-body {
   margin-top: 10px;
- }
+}
 
- #topic {
+#topic {
   font-weight: bold;
- }
-
- #likes {
-  padding-left: 100px;
- }
+}
 
 #back-arrow {
-text-align: left;
+  text-align: left;
 }
 
 .fa-sharp {
   color: black;
   background-color: rgb(186, 183, 183);
-  margin: 5px
+  margin: 5px;
+}
+
+#comments-header {
+  margin: 15px;
+}
+
+.card-text {
+  text-align: justify;
+}
+
+.card-header {
+  text-align: justify;
+  font-weight: bold;
+}
+
+#comment-date {
+  font-weight: lighter;
 }

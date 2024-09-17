@@ -29,7 +29,7 @@ export default function ListComments({ article_id }) {
   return (
   <>
   <div>
-  <h3>Comments</h3>
+  <h3 id="comments-header">Comments</h3>
     {comments.map((comment) => {
         return <CommentCard key={comment.id} comment={comment} />
     })}
