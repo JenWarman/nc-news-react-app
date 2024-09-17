@@ -28,16 +28,21 @@
   flex-wrap: wrap;
 }
 .article-card {
-  flex-grow: 1;
+ display: flex;
   padding: 2rem;
   margin: 1rem;
   align-content: center;
-  text-align: center;
 }
-
+/* .card-body {
+  background-color: bisque;
+  flex-grow: 1;
+  align-content: center;
+  text-align: center;
+} */
 .footer {
-  border: solid black 3px;
+  background-color: rgb(212, 209, 209);
   padding: 10px;
+  text-align: left;
 }
 
 .user-login {
@@ -46,19 +51,17 @@
 }
 .votes-and-likes {
   display: flex;
-  border: solid black 3px;
-  padding: 10px;
 }
-#votes {
-  padding: 5px;
-}
-
-#comments {
-  padding: 5px;
-}
+/* .card.body {
+  background-color: aqua;
+} */
+/* #votes {
+  ap
+} */
 
 .fa-solid {
   padding: 5px;
+ 
 }
 
 .app {
@@ -68,13 +71,14 @@
 
 .author-and-date {
   display: flex;
-  border: solid black 3px;
-  padding: 10px;
+  font-weight: lighter;
 }
 
 .author-or-date {
-  padding: 10px; 
-  
+  display: flex;
+  padding: 10px;
+  font-weight: lighter;
+  text-align: center;
 }
 
 .article-container {
@@ -91,14 +95,45 @@
   text-align: center;
   width: 18rem;
 }
- #article-img {
-  width: 100%
- }
+#article-img {
+  width: 100%;
+}
 
- #article-body {
+#article-body {
   margin-top: 10px;
- }
+}
 
- #topic {
+.topic {
   font-weight: bold;
- }
+}
+
+#back-arrow {
+  text-align: left;
+}
+
+.fa-sharp {
+  color: black;
+  background-color: rgb(186, 183, 183);
+  margin: 5px;
+}
+
+#comments-header {
+  margin: 15px;
+}
+
+.card-text {
+  text-align: justify;
+}
+
+.card-header {
+  text-align: justify;
+  font-weight: bold;
+}
+
+#comment-date {
+  font-weight: lighter;
+}
+
+p.topic.card-text {
+  padding-top: 5px;
+}

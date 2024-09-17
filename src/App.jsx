@@ -7,6 +7,7 @@ import UserLogin from "./components/UserLogin";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route } from "react-router-dom";
 import SingleArticleCard from "./components/SingleArticleCard";
+import ListComments from "./components/ListComments";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<ListArticles />}></Route>
         <Route path="/article/:article_id" element={<SingleArticleCard />}></Route>
+        <Route path="/article/:article_id" element={<ListComments />}></Route>
       </Routes>
       <Footer />
     </div>
