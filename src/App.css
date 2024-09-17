@@ -17,8 +17,9 @@
 }
 
 .search {
-  border: solid black 3px;
-  padding: 10px;
+  border: solid black 1px;
+  padding: 5px;
+  margin: 5px;
 }
 .card-container {
   border: solid 3px #30475e;
@@ -73,4 +74,31 @@
 
 .author-or-date {
   padding: 10px; 
+  
 }
+
+.article-container {
+  border: solid 3px #30475e;
+  margin: 5px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.article {
+  flex-grow: 1;
+  margin: 1rem;
+  align-content: center;
+  text-align: center;
+  width: 18rem;
+}
+ #article-img {
+  width: 100%
+ }
+
+ #article-body {
+  margin-top: 10px;
+ }
+
+ #topic {
+  font-weight: bold;
+ }

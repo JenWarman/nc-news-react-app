@@ -34,14 +34,18 @@ export default function SingleArticleCard() {
 
   return (
     <>
-      <h2>{articleById.title}</h2>
-      <img src={articleById.article_img_url} />
-      <div className="author-and-date">
-      <p className="author-or-date">author: {articleById.author}</p>
-      <p className="author-or-date">{formatDate}</p>
+      <div className="article-container">
+        <div className="article">
+          <h2>{articleById.title}</h2>
+          <img id="article-img" src={articleById.article_img_url} alt={articleById.title}/>
+          <div className="author-and-date">
+            <p className="author-or-date">author: {articleById.author}</p>
+            <p className="author-or-date">{formatDate}</p>
+          </div>
+          <p id="article-body">{articleById.body}</p>
+          <p id="topic">{articleById.topic}</p>
+        </div>
       </div>
-      <p>{articleById.body}</p>
-      <p>{articleById.topic}</p>
     </>
   );
 }

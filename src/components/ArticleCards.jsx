@@ -10,7 +10,7 @@ export default function ArticleCards({ article }) {
     <>
       <div className="article-card">
         <Card className="item-card" style={{ width: "18rem" }}>
-          <Card.Img variant="top" src={article.article_img_url} />
+          <Card.Img variant="top" src={article.article_img_url} alt={article.title} />
           <Card.Body>
             <Link to={'/article/'+article.article_id}>
               <Card.Title>{article.title}</Card.Title>
