@@ -2,6 +2,7 @@ import ArticleCard from "./ArticleCards";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import SingleArticleCard from "./SingleArticleCard";
+import { useParams } from "react-router-dom";
 
 export default function ListArticles() {
   const [articles, setArticles] = useState([]);
@@ -36,7 +37,7 @@ export default function ListArticles() {
       ) : (
         <p>articles here...</p>
       )}
-      <SingleArticleCard articles={articles} />
+      <SingleArticleCard />
     </div>
   );
 }

@@ -1,15 +1,18 @@
 import Card from "react-bootstrap/Card";
-import SingleArticleCard from "./SingleArticleCard";
 import { Link } from "react-router-dom";
 
 export default function ArticleCards({ article }) {
+
+  const readableDate = new Date(article.created_at);
+  const formatDate = readableDate.toDateString();
+
   return (
     <>
       <div className="article-card">
         <Card className="item-card" style={{ width: "18rem" }}>
-          <Card.Img variant="top" src={article.article_img_url} />
+          <Card.Img variant="top" src={article.article_img_url} alt={article.title} />
           <Card.Body>
-            <Link to="//:article_id">
+            <Link to={'/article/'+article.article_id}>
               <Card.Title>{article.title}</Card.Title>
             </Link>
             <section className="votes-and-likes">
@@ -22,7 +25,7 @@ export default function ArticleCards({ article }) {
               </Card.Text>
             </section>
             <Card.Text>{article.topic}</Card.Text>
-            <Card.Text>{article.created_at}</Card.Text>
+            <Card.Text>{formatDate}</Card.Text>
           </Card.Body>
         </Card>
       </div>

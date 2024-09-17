@@ -16,9 +16,8 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/" element={<ListArticles />}></Route>
-        <Route path="/:article_id" element={<SingleArticleCard />}></Route>
+        <Route path="/article/:article_id" element={<SingleArticleCard />}></Route>
       </Routes>
-      <ListArticles />
       <Footer />
     </div>
   );
