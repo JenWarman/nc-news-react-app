@@ -1,5 +1,5 @@
 export default function Footer() {
     return (
-        <p className="footer">some kind of footer stuff...</p>
+        <p className="footer">&copy;NC News {(new Date().getFullYear())}</p>
     )
 }

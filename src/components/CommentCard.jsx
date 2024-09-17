@@ -6,10 +6,11 @@ export default function({comment}) {
     return (
         <>
     <Card>
-      <Card.Header id="comment-header">{comment.author}<Card.Text id="comment-date">{formatDate}</Card.Text></Card.Header>
+      <Card.Header >{comment.author}<Card.Text id="comment-date">{formatDate}</Card.Text></Card.Header>
       <Card.Body>
         <Card.Text>{comment.body}</Card.Text>
         <div className="author-and-date">
+        
         <Card.Text id="likes"><i className="fa-solid fa-heart"></i>{comment.votes}</Card.Text>
         </div>
       </Card.Body>

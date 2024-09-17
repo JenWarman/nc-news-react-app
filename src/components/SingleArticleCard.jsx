@@ -38,7 +38,7 @@ export default function SingleArticleCard() {
             <p className="author-or-date">{formatDate}</p>
           </div>
           <p id="article-body">{articleById.body}</p>
-          <p id="topic">{articleById.topic}</p>
+          <p className="topic">{articleById.topic}</p>
         </div>
       </div>
       <ListComments article_id={article_id}/>
