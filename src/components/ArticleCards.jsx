@@ -20,9 +20,6 @@ export default function ArticleCards({ article }) {
                 <i className="fa-solid fa-heart"></i>
                 {article.votes}
               </Card.Text>
-              {/* <Card.Text id="comments">
-                comments: {article.comment_count}
-              </Card.Text> */}
             </section>
             <Card.Text className="topic">{article.topic}</Card.Text>
             <Card.Text>{formatDate}</Card.Text>

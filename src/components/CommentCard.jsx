@@ -10,7 +10,6 @@ export default function({comment}) {
       <Card.Body>
         <Card.Text>{comment.body}</Card.Text>
         <div className="author-and-date">
-        
         <Card.Text id="likes"><i className="fa-solid fa-heart"></i>{comment.votes}</Card.Text>
         </div>
       </Card.Body>
