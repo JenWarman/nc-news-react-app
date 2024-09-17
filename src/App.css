@@ -64,3 +64,13 @@
   width: 100%;
   height: 100%;
 }
+
+.author-and-date {
+  display: flex;
+  border: solid black 3px;
+  padding: 10px;
+}
+
+.author-or-date {
+  padding: 10px; 
+}

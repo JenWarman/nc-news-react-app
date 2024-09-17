@@ -2,6 +2,10 @@ import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 
 export default function ArticleCards({ article }) {
+
+  const readableDate = new Date(article.created_at);
+  const formatDate = readableDate.toDateString();
+
   return (
     <>
       <div className="article-card">
@@ -21,7 +25,7 @@ export default function ArticleCards({ article }) {
               </Card.Text>
             </section>
             <Card.Text>{article.topic}</Card.Text>
-            <Card.Text>{article.created_at}</Card.Text>
+            <Card.Text>{formatDate}</Card.Text>
           </Card.Body>
         </Card>
       </div>

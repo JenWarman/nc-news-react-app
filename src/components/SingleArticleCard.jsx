@@ -29,12 +29,17 @@ export default function SingleArticleCard() {
       });
   }, []);
 
+  const readableDate = new Date(articleById.created_at);
+  const formatDate = readableDate.toDateString();
+
   return (
     <>
       <h2>{articleById.title}</h2>
       <img src={articleById.article_img_url} />
-      <p>author: {articleById.author}</p>
-      <p>date: {articleById.created_at}</p>
+      <div className="author-and-date">
+      <p className="author-or-date">author: {articleById.author}</p>
+      <p className="author-or-date">{formatDate}</p>
+      </div>
       <p>{articleById.body}</p>
       <p>{articleById.topic}</p>
     </>
