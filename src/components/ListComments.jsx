@@ -10,7 +10,8 @@ export default function ListComments({ article_id }) {
   useEffect(() => {
     setIsLoading(true);
     setIsError(false);
-    fetchCommentsByArticleId(article_id)
+    if (article_id){
+      fetchCommentsByArticleId(article_id)
       .then((data) => {
         setIsLoading(false);
         setIsError(false);
@@ -20,7 +21,8 @@ export default function ListComments({ article_id }) {
         setIsLoading(false);
         setIsError(true);
       })
-  }, []);
+    }
+  }, [article_id]);
 
   return (
   <>

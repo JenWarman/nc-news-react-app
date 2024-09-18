@@ -7,7 +7,6 @@ export default function SubmitComments({ article_id }) {
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
-    console.log(name, value)
     setNewComment((values) => ({ ...values, [name]: value }));
   };
 
@@ -16,15 +15,16 @@ export default function SubmitComments({ article_id }) {
     setNewComment(newComment);
     axios
       .post(
-        `https://nc-news-53nl.onrender.com/api/articles/${article_id}/comments`,
+        'https://nc-news-53nl.onrender.com/api/articles/'+article_id+'/comments',
         newComment
       )
-      .then((response) => {
-        setNewComment('')
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+      // .then((response) => {
+      //   // console.log(response)
+      //   setNewComment(response.data.comment)
+      // })
+      // .catch((error) => {
+      //   console.log(error);
+      // });
   };
   return (
     <div className="comment-form-container">

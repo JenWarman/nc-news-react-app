@@ -13,11 +13,15 @@ export default function SingleArticleCard() {
   const [buttonClicked, setButtonClicked] = useState(false);
 
   useEffect(() => {
+    if (article_id) {
       fetchArticleById(article_id)
       .then((data) => {
         setArticleById(data[0]);
       })
-      .catch((error) => {});
+      .catch((error) => {
+        console.log(error);
+      });
+    } 
   }, []);
 
   const readableDate = new Date(articleById.created_at);
