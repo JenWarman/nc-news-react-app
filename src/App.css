@@ -126,3 +126,28 @@
 p.topic.card-text {
   padding-top: 5px;
 }
+
+#article-votes-container {
+  display: inline-flex;
+}
+
+.individual-comment-card {
+  padding: 10px
+}
+
+.card-title {
+  text-align: left;
+}
+
+button {
+  border: none;
+  background-color: #ffff;
+}
+
+@media all and (max-width: 600px) {
+  .article-card {
+    margin: auto;
+    padding: 0.2rem;
+    padding-top: 0.5rem;
+  }
+}

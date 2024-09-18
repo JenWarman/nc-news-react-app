@@ -15,12 +15,6 @@ export default function ArticleCards({ article }) {
             <Link to={'/article/'+article.article_id}>
               <Card.Title>{article.title}</Card.Title>
             </Link>
-            <section className="votes-and-likes">
-              <Card.Text id="votes">
-                <i className="fa-solid fa-heart"></i>
-                {article.votes}
-              </Card.Text>
-            </section>
             <Card.Text className="topic">{article.topic}</Card.Text>
             <Card.Text>{formatDate}</Card.Text>
           </Card.Body>

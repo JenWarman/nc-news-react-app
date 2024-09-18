@@ -4,7 +4,7 @@ export default function({comment}) {
     const readableDate = new Date(comment.created_at);
     const formatDate = readableDate.toDateString();
     return (
-        <>
+        <div className='individual-comment-card'>
     <Card>
       <Card.Header >{comment.author}<Card.Text id="comment-date">{formatDate}</Card.Text></Card.Header>
       <Card.Body>
@@ -14,6 +14,6 @@ export default function({comment}) {
         </div>
       </Card.Body>
     </Card>
-    </>
+    </div>
     )
 }

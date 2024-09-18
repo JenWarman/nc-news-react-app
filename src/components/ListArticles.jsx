@@ -1,8 +1,7 @@
-import ArticleCard from "./ArticleCards";
+import ArticleCards from "./ArticleCards";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import SingleArticleCard from "./SingleArticleCard";
-import { useParams } from "react-router-dom";
 
 export default function ListArticles() {
   const [articles, setArticles] = useState([]);
@@ -32,7 +31,7 @@ export default function ListArticles() {
     <div className="card-container">
       {!isLoading ? (
         articles.map((article) => {
-          return <ArticleCard key={article.article_id} article={article} />;
+          return <ArticleCards key={article.article_id} article={article} />;
         })
       ) : (
         <p>articles here...</p>
