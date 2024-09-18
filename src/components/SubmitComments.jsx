@@ -3,17 +3,6 @@ import { useState, useEffect } from "react";
 
 export default function SubmitComments({ article_id }) {
   const [newComment, setNewComment] = useState([{ username: "", body: "" }]);
-  
-
-// useEffect(() => {
-//     axios.get(
-//         `https://nc-news-53nl.onrender.com/api/articles/${article_id}/comments`)
-//       .then((response) => {
-//           return response.data
-//         }).catch((error) => {
-//             console.log(error)
-//         })
-// }, [newComment])
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -54,7 +43,7 @@ export default function SubmitComments({ article_id }) {
           className="submit-comment"
           placeholder="add a comment..."
         ></input>
-        <button className="submit-comment" id="submit-comment-button">
+        <button type="submit" className="submit-comment" id="submit-comment-button">
           Submit
         </button>
       </form>
