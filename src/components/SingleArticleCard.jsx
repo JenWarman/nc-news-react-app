@@ -27,14 +27,29 @@ export default function SingleArticleCard() {
 
   const handleClick = (event) => {
     console.log(event)
-    event.preventDefault();
     setVotes(votes => votes +1);
   }
+  console.log(votes, '<---votes in state')
+  // console.log(articleById)
   
+  const voteCount = {
+    votes: articleById.votes
+  };
+
   const handlSubmit = (event) => {
-    console.log(event)
+    event.preventDefault();
+    axios.
+    patch("https://nc-news-53nl.onrender.com/api/articles/" + article_id, voteCount)
+    .then((response) => {
+      console.log(response.data, '<---response in patch request')
+      setVotes(votes)
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+   
   }
-  
+  console.log(articleById.votes, '<---votes in article object')
 
   return (
     <>
@@ -53,9 +68,11 @@ export default function SingleArticleCard() {
           <p className="topic">{articleById.topic}</p>
           <div id="article-votes-container">
           <p>{votes}</p>
+
           <div onSubmit={handlSubmit}> 
          <button onClick={handleClick}><i className="fa-solid fa-heart"></i></button>
           </div>
+
           </div>
         </div>
       </div>
