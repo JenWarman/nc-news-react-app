@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import ListComments from "./ListComments";
 import { Link } from "react-router-dom";
+import SubmitComments from "./SubmitComments";
 
 export default function SingleArticleCard() {
   const [articleById, setArticleById] = useState([]);
@@ -71,6 +72,7 @@ export default function SingleArticleCard() {
           </div>
         </div>
       </div>
+      <SubmitComments article_id={article_id}/>
       <ListComments article_id={article_id} />
     </>
   );
