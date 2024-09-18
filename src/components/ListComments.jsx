@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import CommentCard from "./CommentCard";
+import {fetchCommentsByArticleId} from '../app'
 
 export default function ListComments({ article_id }) {
   const [comments, setComments] = useState([]);
@@ -10,15 +10,11 @@ export default function ListComments({ article_id }) {
   useEffect(() => {
     setIsLoading(true);
     setIsError(false);
-    axios.get(
-      `https://nc-news-53nl.onrender.com/api/articles/${article_id}/comments`)
-    .then((response) => {
-        return response.data
-      })
+    fetchCommentsByArticleId(article_id)
       .then((data) => {
         setIsLoading(false);
         setIsError(false);
-        setComments(data.comments)
+        setComments(data)
       })
       .catch((error) => {
         setIsLoading(false);
