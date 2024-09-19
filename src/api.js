@@ -15,6 +15,17 @@ export const fetchArticlesByTopic = (topic) => {
         })
 };
 
+export const deleteCommentByCommentId = (comment_id) => {
+    return api.delete(`/comments/${comment_id}`)
+    .then((response) => {
+        return response.data;
+    })
+    .catch((error) => {
+        console.log(error, '<---error in delete comments by comment id');
+        throw error;
+    })
+}
+
 export const fetchArticles = () => {
     return api.get('/articles')
         .then((response) => {
@@ -55,6 +66,7 @@ export const fetchUsers = () => {
         return response.data.rows;
     })
     .catch((error) => {
-        consol.log(error, '<---error in fetch users')
+        console.log(error, '<---error in fetch users')
+        throw error;
     })
 }

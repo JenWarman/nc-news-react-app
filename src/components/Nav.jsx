@@ -6,7 +6,6 @@ export default function Nav() {
   const [topic, setTopic] = useState([]);
 
   const handleClick = (event) => {
-    console.log(event.target.value);
     setTopic(event.target.value);
   };
  
