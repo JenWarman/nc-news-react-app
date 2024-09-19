@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import CommentCard from "./CommentCard";
-import {fetchCommentsByArticleId} from '../app'
+import { fetchCommentsByArticleId } from "../app";
 
 export default function ListComments({ article_id }) {
   const [comments, setComments] = useState([]);
@@ -10,26 +10,30 @@ export default function ListComments({ article_id }) {
   useEffect(() => {
     setIsLoading(true);
     setIsError(false);
-    if (article_id){
+    if (article_id) {
       fetchCommentsByArticleId(article_id)
-      .then((data) => {
-        setIsLoading(false);
-        setIsError(false);
-        setComments(data)
-      })
-      .catch((error) => {
-        setIsLoading(false);
-        setIsError(true);
-      })
+        .then((data) => {
+          setIsLoading(false);
+          setIsError(false);
+          setComments(data);
+        })
+        .catch((error) => {
+          setIsLoading(false);
+          setIsError(true);
+        });
     }
   }, [article_id]);
 
   return (
-  <>
-  <h3 id="comments-header">Comments</h3>
-    {comments.length >= 1 ?comments.map((comment, index) => {
-        return <CommentCard key={index} comment={comment} />
-    }): (<p>There are not comments for this post yet.</p>)}
-  </>
-  )
+    <>
+      <h3 id="comments-header">Comments</h3>
+      {comments.length >= 1 ? (
+        comments.map((comment, index) => {
+          return <CommentCard key={index} comment={comment} />;
+        })
+      ) : (
+        <p>There are not comments for this post yet.</p>
+      )}
+    </>
+  );
 }

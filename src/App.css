@@ -166,6 +166,10 @@ button {
   margin: 5px
 } 
 
+#comment-submit-confirmation {
+  padding: 1rem;
+}
+
 @media all and (max-width: 600px) {
   .article-card {
     margin: auto;

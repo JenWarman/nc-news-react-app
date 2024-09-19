@@ -15,13 +15,13 @@ export default function SingleArticleCard() {
   useEffect(() => {
     if (article_id) {
       fetchArticleById(article_id)
-      .then((data) => {
-        setArticleById(data[0]);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-    } 
+        .then((data) => {
+          setArticleById(data[0]);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
   }, []);
 
   const readableDate = new Date(articleById.created_at);
@@ -73,7 +73,7 @@ export default function SingleArticleCard() {
           </div>
         </div>
       </div>
-      <SubmitComments article_id={article_id}/>
+      <SubmitComments article_id={article_id} />
       <ListComments article_id={article_id} />
     </>
   );

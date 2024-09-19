@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 
 export default function SubmitComments({ article_id }) {
   const [newComment, setNewComment] = useState([{ username: "", body: "" }]);
+  const [hasCommentSubmitted, setHasCommentSubmitted] = useState(false);
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -11,21 +12,23 @@ export default function SubmitComments({ article_id }) {
   };
 
   const handleSubmit = (event) => {
+    setHasCommentSubmitted(true);
     event.preventDefault();
     setNewComment(newComment);
-    axios
-      .post(
-        'https://nc-news-53nl.onrender.com/api/articles/'+article_id+'/comments',
-        newComment
-      )
-      // .then((response) => {
-      //   // console.log(response)
-      //   setNewComment(response.data.comment)
-      // })
-      // .catch((error) => {
-      //   console.log(error);
-      // });
+    axios.post(
+      "https://nc-news-53nl.onrender.com/api/articles/" +
+        article_id +
+        "/comments",
+      newComment
+    );
   };
+
+  if (hasCommentSubmitted) {
+    return (
+      <p id="comment-submit-confirmation">your comment has been submitted</p>
+    );
+  }
+
   return (
     <div className="comment-form-container">
       <form onSubmit={handleSubmit} className="form-container">
@@ -43,7 +46,11 @@ export default function SubmitComments({ article_id }) {
           className="submit-comment"
           placeholder="add a comment..."
         ></input>
-        <button type="submit" className="submit-comment" id="submit-comment-button">
+        <button
+          type="submit"
+          className="submit-comment"
+          id="submit-comment-button"
+        >
           Submit
         </button>
       </form>

@@ -1,7 +1,7 @@
 import ArticleCards from "./ArticleCards";
 import { useEffect, useState } from "react";
-import SingleArticleCard from "./SingleArticleCard";
-import {fetchArticles}  from '../app'
+
+import { fetchArticles } from "../app";
 
 export default function ListArticles() {
   const [articles, setArticles] = useState([]);
@@ -32,7 +32,6 @@ export default function ListArticles() {
       ) : (
         <p>articles here...</p>
       )}
-      <SingleArticleCard />
     </div>
   );
 }
