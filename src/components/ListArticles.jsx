@@ -1,7 +1,7 @@
 import ArticleCards from "./ArticleCards";
 import { useEffect, useState } from "react";
-import axios from "axios";
-import SingleArticleCard from "./SingleArticleCard";
+
+import { fetchArticles } from "../app";
 
 export default function ListArticles() {
   const [articles, setArticles] = useState([]);
@@ -11,15 +11,11 @@ export default function ListArticles() {
   useEffect(() => {
     setIsLoading(true);
     setIsError(false);
-    axios
-      .get("https://nc-news-53nl.onrender.com/api/articles")
-      .then((response) => {
-        return response.data;
-      })
-      .then((articleData) => {
+    fetchArticles()
+      .then((articles) => {
         setIsLoading(false);
         setIsError(false);
-        setArticles(articleData.articles);
+        setArticles(articles);
       })
       .catch((error) => {
         setIsLoading(false);
@@ -36,7 +32,6 @@ export default function ListArticles() {
       ) : (
         <p>articles here...</p>
       )}
-      <SingleArticleCard />
     </div>
   );
 }

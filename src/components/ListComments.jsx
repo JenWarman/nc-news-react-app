@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import CommentCard from "./CommentCard";
+import { fetchCommentsByArticleId } from "../app";
 
 export default function ListComments({ article_id }) {
   const [comments, setComments] = useState([]);
@@ -10,28 +10,30 @@ export default function ListComments({ article_id }) {
   useEffect(() => {
     setIsLoading(true);
     setIsError(false);
-    axios.get(
-      `https://nc-news-53nl.onrender.com/api/articles/${article_id}/comments`)
-    .then((response) => {
-        return response.data
-      })
-      .then((data) => {
-        setIsLoading(false);
-        setIsError(false);
-        setComments(data.comments)
-      })
-      .catch((error) => {
-        setIsLoading(false);
-        setIsError(true);
-      })
-  }, []);
+    if (article_id) {
+      fetchCommentsByArticleId(article_id)
+        .then((data) => {
+          setIsLoading(false);
+          setIsError(false);
+          setComments(data);
+        })
+        .catch((error) => {
+          setIsLoading(false);
+          setIsError(true);
+        });
+    }
+  }, [article_id]);
 
   return (
-  <>
-  <h3 id="comments-header">Comments</h3>
-    {comments.length >= 1 ?comments.map((comment, index) => {
-        return <CommentCard key={index} comment={comment} />
-    }): (<p>There are not comments for this post yet.</p>)}
-  </>
-  )
+    <>
+      <h3 id="comments-header">Comments</h3>
+      {comments.length >= 1 ? (
+        comments.map((comment, index) => {
+          return <CommentCard key={index} comment={comment} />;
+        })
+      ) : (
+        <p>There are not comments for this post yet.</p>
+      )}
+    </>
+  );
 }

@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import ListComments from "./ListComments";
 import { Link } from "react-router-dom";
+import SubmitComments from "./SubmitComments";
+import { fetchArticleById } from "../app";
 
 export default function SingleArticleCard() {
   const [articleById, setArticleById] = useState([]);
@@ -11,15 +13,15 @@ export default function SingleArticleCard() {
   const [buttonClicked, setButtonClicked] = useState(false);
 
   useEffect(() => {
-    axios
-      .get("https://nc-news-53nl.onrender.com/api/articles/" + article_id)
-      .then((response) => {
-        return response.data;
-      })
-      .then((data) => {
-        setArticleById(data[0]);
-      })
-      .catch((error) => {});
+    if (article_id) {
+      fetchArticleById(article_id)
+        .then((data) => {
+          setArticleById(data[0]);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
   }, []);
 
   const readableDate = new Date(articleById.created_at);
@@ -71,6 +73,7 @@ export default function SingleArticleCard() {
           </div>
         </div>
       </div>
+      <SubmitComments article_id={article_id} />
       <ListComments article_id={article_id} />
     </>
   );

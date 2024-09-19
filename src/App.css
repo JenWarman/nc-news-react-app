@@ -144,6 +144,32 @@ button {
   background-color: #ffff;
 }
 
+.comment-form-container{
+  border: solid 3px #30475e;
+  margin: 5px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.form-container{ 
+  display: flex;
+  padding: 1rem;
+  margin: 1rem;
+  align-content: center;
+}
+
+#submit-comment-button {
+  background-color: black;
+  color: #ffff; 
+}
+
+.submit-comment {
+  margin: 5px
+} 
+
+#comment-submit-confirmation {
+  padding: 1rem;
+}
+
 @media all and (max-width: 600px) {
   .article-card {
     margin: auto;
@@ -151,3 +177,4 @@ button {
     padding-top: 0.5rem;
   }
 }
+
