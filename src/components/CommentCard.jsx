@@ -50,8 +50,7 @@ export default function ({ comment }) {
               <i className="fa-solid fa-heart"></i>
               {votes + comment.votes}</Card.Text>
             {comment.author === user ? <Card.Text id="trash" onClick={handleDelete}>
-              <i className="fa-solid fa-trash-can"></i></Card.Text> : <Card.Text id="trash">
-              <i className="fa-solid fa-trash-can"></i></Card.Text>}
+              <i className="fa-solid fa-trash-can"></i></Card.Text> : null}
           </div>
         </Card.Body>
       </Card>
