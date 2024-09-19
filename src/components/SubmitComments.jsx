@@ -1,6 +1,5 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
-import CommentCard from "./CommentCard";
+import { useState} from "react";
 
 export default function SubmitComments({ article_id }) {
   const [newComment, setNewComment] = useState([{ username: "", body: "" }]);

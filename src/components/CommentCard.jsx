@@ -1,14 +1,10 @@
 import Card from "react-bootstrap/Card";
 import { useState } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
-import SubmitComments from './SubmitComments'
-import ListComments from "./ListComments";
 
-export default function ({ comment, newComment, setNewComment }) {
+export default function ({ comment }) {
   const [votes, setVotes] = useState(0);
   const [buttonClicked, setButtonClicked] = useState(false);
-  const { article_id } = useParams();
   const [isDeleting, setIsDeleting] = useState(false);
   const [deleted, setDeleted] = useState(false);
 
@@ -17,8 +13,6 @@ export default function ({ comment, newComment, setNewComment }) {
     setButtonClicked(true);
   };
 
-  // console.log(newComment)
-  // console.log(comment)
   const handleDelete = (event) => {
     setIsDeleting(true);
     axios.delete(`https://nc-news-53nl.onrender.com/api/comments/${comment.comment_id}`)
@@ -36,7 +30,9 @@ export default function ({ comment, newComment, setNewComment }) {
   if (deleted) {
     return <p>Your comment has been deleted.</p>
   }
-  const user = 'grumpy19'
+
+  const user = 'grumpy19';
+
   const readableDate = new Date(comment.created_at);
   const formatDate = readableDate.toDateString();
 
