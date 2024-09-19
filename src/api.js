@@ -4,6 +4,17 @@ const api = axios.create({
     baseURL: 'https://nc-news-53nl.onrender.com/api'
 });
 
+export const fetchArticlesByTopic = (topic) => {
+    return api.get('/articles', {params: {topic}})
+        .then((response) => {
+            return response.data.articles;
+        })
+        .catch((error) => {
+            console.log(error, '<--error in api articles catch')
+            throw error;
+        })
+};
+
 export const fetchArticles = () => {
     return api.get('/articles')
         .then((response) => {

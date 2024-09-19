@@ -28,7 +28,7 @@
   flex-wrap: wrap;
 }
 .article-card {
- display: flex;
+  display: flex;
   padding: 2rem;
   margin: 1rem;
   align-content: center;
@@ -50,7 +50,6 @@
 
 .fa-solid {
   padding: 5px;
- 
 }
 
 .app {
@@ -132,7 +131,7 @@ p.topic.card-text {
 }
 
 .individual-comment-card {
-  padding: 10px
+  padding: 10px;
 }
 
 .card-title {
@@ -144,13 +143,13 @@ button {
   background-color: #ffff;
 }
 
-.comment-form-container{
+.comment-form-container {
   border: solid 3px #30475e;
   margin: 5px;
   display: flex;
   flex-wrap: wrap;
 }
-.form-container{ 
+.form-container {
   display: flex;
   padding: 1rem;
   margin: 1rem;
@@ -159,12 +158,12 @@ button {
 
 #submit-comment-button {
   background-color: black;
-  color: #ffff; 
+  color: #ffff;
 }
 
 .submit-comment {
-  margin: 5px
-} 
+  margin: 5px;
+}
 
 #comment-submit-confirmation {
   padding: 1rem;
@@ -172,7 +171,7 @@ button {
 
 #sign-in-button {
   background-color: black;
-  color: #ffff
+  color: #ffff;
 }
 #profile-pic {
   float: left;
@@ -182,7 +181,7 @@ button {
 }
 #profile-user {
   margin-left: 10px;
-  margin-top: 15px
+  margin-top: 15px;
 }
 
 .user-login-container {
@@ -194,7 +193,7 @@ button {
 .topic-button {
   background-color: black;
   color: #ffff;
-  margin: 10px
+  margin: 10px;
 }
 @media all and (max-width: 600px) {
   .article-card {
@@ -203,4 +202,3 @@ button {
     padding-top: 0.5rem;
   }
 }
-

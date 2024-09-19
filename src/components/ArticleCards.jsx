@@ -7,7 +7,6 @@ export default function ArticleCards({ article }) {
   const formatDate = readableDate.toDateString();
 
   return (
-    <>
       <div className="article-card">
         <Card className="item-card" style={{ width: "18rem" }}>
           <Card.Img
@@ -24,6 +23,5 @@ export default function ArticleCards({ article }) {
           </Card.Body>
         </Card>
       </div>
-    </>
   );
 }

@@ -7,7 +7,6 @@ import UserLogin from "./components/UserLogin";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route } from "react-router-dom";
 import SingleArticleCard from "./components/SingleArticleCard";
-import ListComments from "./components/ListComments";
 import TopicPage from "./components/TopicPage";
 
 
@@ -18,10 +17,9 @@ function App() {
       <Header />
       <Nav />
       <Routes>
-      {/* <Route path="article/:topic" element={<TopicPage/>}></Route> */}
+        <Route path="/topic/:topic" element={<TopicPage/>}></Route>
         <Route path="/" element={<ListArticles />}></Route>
         <Route path="/article/:article_id" element={<SingleArticleCard />}></Route>
-        <Route path="/article/:article_id" element={<ListComments />}></Route>
       </Routes>
       <Footer />
     </div>

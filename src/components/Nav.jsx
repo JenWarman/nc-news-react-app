@@ -8,25 +8,19 @@ export default function Nav() {
   const handleClick = (event) => {
     console.log(event.target.value);
     setTopic(event.target.value);
-    // return (
-    //   <TopicPage topic={topic}/>
-    // )
   };
  
   return (
-    <>
     <div className="search-container">
-      <Link to="article/cooking">
+      <Link to="/topic/cooking">
       <button className="topic-button" onClick={handleClick} value="cooking">
         Cooking</button></Link>
-      <Link to="article/coding">
+      <Link to="/topic/coding">
       <button className="topic-button" onClick={handleClick} value="coding">
         Coding</button></Link>
-        <Link to="article/football">
+        <Link to="/topic/football">
       <button className="topic-button" onClick={handleClick} value="football">
         Football</button></Link>
     </div>
-    
-    </>
   );
 }

@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { fetchArticles } from "../api";
+import { fetchArticlesByTopic } from "../api";
 import {useState, useEffect} from 'react';
 import Nav from "./Nav";
 import ArticleCards from "./ArticleCards";
@@ -11,28 +11,29 @@ const [currentArticles, setCurrentArticles] = useState([])
 const {topic} = useParams();
 useEffect(() => {
     setArticlesByTopic(topic);
-    fetchArticles()
+    fetchArticlesByTopic(topic)
     .then((articles)=> {
-        // articles.map((article) => {
-        //     console.log(article.topic)
-        // })
-        // console.log(articles)
-    setCurrentArticles(articles)
+        setCurrentArticles(articles)
     })
     .catch((error) => {
         console.log(error, '<--error in topic page')
     })
-}, [])
+}, [topic])
 
-// console.log(topic)
-//  if (!topic) {
-//     return (
-//         <p>no articles for this topic</p>
-//     )
-//  }
+ if (!topic) {
     return (
-        <>
-       <p>topics</p>
-        </>
+        <p>no articles for this topic</p>
+    )
+ }
+    return (
+        <div className="card-container">
+        {currentArticles ? (
+          currentArticles.map((article) => {
+            return <ArticleCards key={article.article_id} article={article} />;
+          })
+        ) : (
+          <p>articles here...</p>
+        )}
+      </div>
     )
 }
