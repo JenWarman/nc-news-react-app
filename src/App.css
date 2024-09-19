@@ -176,8 +176,7 @@ button {
 }
 #profile-pic {
   float: left;
-  width: 8vw;
-  height: 8vh;
+  width: 3rem;
   border-radius: 100%;
   overflow: hidden;
 }
@@ -190,6 +189,12 @@ button {
   display: flex;
   padding: 1rem;
   margin: 1rem;
+}
+
+.topic-button {
+  background-color: black;
+  color: #ffff;
+  margin: 10px
 }
 @media all and (max-width: 600px) {
   .article-card {
