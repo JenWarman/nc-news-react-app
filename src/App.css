@@ -170,6 +170,27 @@ button {
   padding: 1rem;
 }
 
+#sign-in-button {
+  background-color: black;
+  color: #ffff
+}
+#profile-pic {
+  float: left;
+  width: 8vw;
+  height: 8vh;
+  border-radius: 100%;
+  overflow: hidden;
+}
+#profile-user {
+  margin-left: 10px;
+  margin-top: 15px
+}
+
+.user-login-container {
+  display: flex;
+  padding: 1rem;
+  margin: 1rem;
+}
 @media all and (max-width: 600px) {
   .article-card {
     margin: auto;

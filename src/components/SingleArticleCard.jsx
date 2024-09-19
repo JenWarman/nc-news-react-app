@@ -4,7 +4,7 @@ import axios from "axios";
 import ListComments from "./ListComments";
 import { Link } from "react-router-dom";
 import SubmitComments from "./SubmitComments";
-import { fetchArticleById } from "../app";
+import { fetchArticleById } from "../api";
 
 export default function SingleArticleCard() {
   const [articleById, setArticleById] = useState([]);

@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState} from "react";
 
 export default function SubmitComments({ article_id }) {
-  const [newComment, setNewComment] = useState([{ username: "", body: "" }]);
+  const [newComment, setNewComment] = useState({ username: "grumpy19", body: "" });
   const [hasCommentSubmitted, setHasCommentSubmitted] = useState(false);
 
   const handleChange = (event) => {
@@ -12,15 +12,19 @@ export default function SubmitComments({ article_id }) {
   };
 
   const handleSubmit = (event) => {
-    setHasCommentSubmitted(true);
     event.preventDefault();
-    setNewComment(newComment);
     axios.post(
       "https://nc-news-53nl.onrender.com/api/articles/" +
         article_id +
         "/comments",
-      newComment
-    );
+        newComment
+    )
+    .then(() => {
+      setHasCommentSubmitted(true);
+    })
+    .catch((error) => {
+      console.log(error)
+    })
   };
 
   if (hasCommentSubmitted) {
@@ -32,13 +36,6 @@ export default function SubmitComments({ article_id }) {
   return (
     <div className="comment-form-container">
       <form onSubmit={handleSubmit} className="form-container">
-        <input
-          name="username"
-          value={newComment.author}
-          onChange={handleChange}
-          className="submit-comment"
-          placeholder="username"
-        ></input>
         <input
           name="body"
           value={newComment.body}

@@ -37,3 +37,13 @@ export const fetchCommentsByArticleId = (article_id) => {
         })
 };
 
+export const fetchUsers = () => {
+    return api.get('/users')
+    .then((response) => {
+        console.log(response)
+        return response.data.rows;
+    })
+    .catch((error) => {
+        consol.log(error, '<---error in fetch users')
+    })
+}

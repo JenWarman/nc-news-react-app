@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import CommentCard from "./CommentCard";
-import { fetchCommentsByArticleId } from "../app";
+import { fetchCommentsByArticleId } from "../api";
 
 export default function ListComments({ article_id }) {
   const [newComment, setNewComment] = useState([{ username: "", body: "" }]);
