@@ -1,6 +1,6 @@
 import Card from "react-bootstrap/Card";
 import { useState } from "react";
-import axios from "axios";
+import { deleteCommentByCommentId } from "../api";
 
 export default function ({ comment }) {
   const [votes, setVotes] = useState(0);
@@ -15,13 +15,12 @@ export default function ({ comment }) {
 
   const handleDelete = (event) => {
     setIsDeleting(true);
-    axios.delete(`https://nc-news-53nl.onrender.com/api/comments/${comment.comment_id}`)
+    deleteCommentByCommentId(comment.comment_id)
     .then((response) => {
       setDeleted(true);
       setIsDeleting(false);
     })
     .catch((error) => {
-      console.log(error, '<---error in delete comment')
       setDeleted(false);
       setIsDeleting(false);
     })
@@ -50,8 +49,7 @@ export default function ({ comment }) {
               <i className="fa-solid fa-heart"></i>
               {votes + comment.votes}</Card.Text>
             {comment.author === user ? <Card.Text id="trash" onClick={handleDelete}>
-              <i className="fa-solid fa-trash-can"></i></Card.Text> : <Card.Text id="trash">
-              <i className="fa-solid fa-trash-can"></i></Card.Text>}
+              <i className="fa-solid fa-trash-can"></i></Card.Text> : null}
           </div>
         </Card.Body>
       </Card>

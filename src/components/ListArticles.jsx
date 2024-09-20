@@ -1,7 +1,7 @@
 import ArticleCards from "./ArticleCards";
 import { useEffect, useState } from "react";
 
-import { fetchArticles } from "../app";
+import { fetchArticles } from "../api";
 
 export default function ListArticles() {
   const [articles, setArticles] = useState([]);
