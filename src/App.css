@@ -6,23 +6,28 @@
 }
 
 .header {
-  border: solid black 3px;
   padding: 10px;
+  margin: auto;
+  background-color: rgb(0, 94, 255);
+  color: #ffff;
+  text-decoration: none;
 }
 
 .search-container {
   display: flex;
-  border: solid black 3px;
+  flex-wrap: wrap;
   padding: 10px;
+  align-items: center;
 }
-
-.search {
-  border: solid black 1px;
-  padding: 5px;
-  margin: 5px;
+.topic-button {
+  background-color: rgb(0, 94, 255);
+  color: #ffff;
+  margin: 10px;
+  border-radius: 10%;
+  flex-grow: 1rem;
 }
 .card-container {
-  border: solid 3px #30475e;
+  border: solid 3px rgb(0, 94, 255);
   margin: 5px;
   display: flex;
   flex-wrap: wrap;
@@ -172,6 +177,12 @@ button {
 #sign-in-button {
   background-color: black;
   color: #ffff;
+  border-radius: 10%;
+  margin-left: 10px;
+}
+.user-login-form {
+  display: flex;
+  margin: 10px;
 }
 #profile-pic {
   float: left;
@@ -190,11 +201,7 @@ button {
   margin: 1rem;
 }
 
-.topic-button {
-  background-color: black;
-  color: #ffff;
-  margin: 10px;
-}
+
 @media all and (max-width: 600px) {
   .article-card {
     margin: auto;

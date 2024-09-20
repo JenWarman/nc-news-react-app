@@ -26,7 +26,7 @@ export default function UserLogin() {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form className="user-login-form"onSubmit={handleSubmit}>
         <input
           placeholder="username"
           onChange={handleChange}

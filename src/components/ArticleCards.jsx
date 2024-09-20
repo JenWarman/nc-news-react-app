@@ -16,9 +16,11 @@ export default function ArticleCards({ article }) {
           />
           <Card.Body>
             <Link to={"/article/" + article.article_id}>
-              <Card.Title>{article.title}</Card.Title>
+              <Card.Title id="card-title">{article.title}</Card.Title>
             </Link>
+            <Link to={"/topic/" + article.topic}>
             <Card.Text className="topic">{article.topic}</Card.Text>
+            </Link>
             <Card.Text>{formatDate}</Card.Text>
           </Card.Body>
         </Card>

@@ -11,6 +11,10 @@ export default function Nav() {
  
   return (
     <div className="search-container">
+      <Link to='/'>
+      <button className="topic-button" onClick={handleClick} value="home">
+        Home</button>
+      </Link>
       <Link to="/topic/cooking">
       <button className="topic-button" onClick={handleClick} value="cooking">
         Cooking</button></Link>
