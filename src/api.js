@@ -5,48 +5,43 @@ const api = axios.create({
 });
 
 export const fetchArticlesByTopic = (topic) => {
-    return api.get('/articles', {params: {topic}})
+    return api.get('/articles', { params: { topic } })
         .then((response) => {
             return response.data.articles;
         })
         .catch((error) => {
-            console.log(error, '<--error in api articles catch')
             throw error;
         })
 };
 
 export const fetchArticlesBySortBy = (sort_by) => {
-    return api.get('/articles', {params: {sort_by}})
-    .then((response)=> {
-        return response.data.articles;
-    })
-    .catch((error) => {
-        console.log(error, '<---error in fetch articles by sortBy');
-        throw error;
-    })
+    return api.get('/articles', { params: { sort_by } })
+        .then((response) => {
+            return response.data.articles;
+        })
+        .catch((error) => {
+            throw error;
+        })
 }
 
 export const fetchAllUsers = () => {
     return api.get('/users')
-    .then((response)=> {
-        return response.data.rows;
-    })
-    .catch((error) => {
-        console.log(error, '<---error in fetch all users');
-        throw error;
-    })
+        .then((response) => {
+            return response.data.rows;
+        })
+        .catch((error) => {
+            throw error;
+        })
 }
-
 
 export const deleteCommentByCommentId = (comment_id) => {
     return api.delete(`/comments/${comment_id}`)
-    .then((response) => {
-        return response.data;
-    })
-    .catch((error) => {
-        console.log(error, '<---error in delete comments by comment id');
-        throw error;
-    })
+        .then((response) => {
+            return response.data;
+        })
+        .catch((error) => {
+            throw error;
+        })
 }
 
 export const fetchArticles = () => {
@@ -55,7 +50,6 @@ export const fetchArticles = () => {
             return response.data.articles;
         })
         .catch((error) => {
-            console.log(error, '<--error in api articles catch')
             throw error;
         })
 };
@@ -66,7 +60,6 @@ export const fetchArticleById = (article_id) => {
             return response.data;
         })
         .catch((error) => {
-            console.log(error, '<---error in api article by id in catch')
             throw error;
         })
 };
@@ -77,19 +70,17 @@ export const fetchCommentsByArticleId = (article_id) => {
             return response.data.comments;
         })
         .catch((error) => {
-            console.log(error, '<---error in fetching comments')
             throw error;
         })
 };
 
 export const fetchUsers = () => {
     return api.get('/users')
-    .then((response) => {
-        console.log(response)
-        return response.data.rows;
-    })
-    .catch((error) => {
-        console.log(error, '<---error in fetch users')
-        throw error;
-    })
+        .then((response) => {
+            console.log(response)
+            return response.data.rows;
+        })
+        .catch((error) => {
+            throw error;
+        })
 }

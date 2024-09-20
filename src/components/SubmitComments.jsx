@@ -1,8 +1,11 @@
 import axios from "axios";
-import { useState} from "react";
+import { useState } from "react";
 
 export default function SubmitComments({ article_id }) {
-  const [newComment, setNewComment] = useState({ username: "grumpy19", body: "" });
+  const [newComment, setNewComment] = useState({
+    username: "grumpy19",
+    body: "",
+  });
   const [hasCommentSubmitted, setHasCommentSubmitted] = useState(false);
 
   const handleChange = (event) => {
@@ -13,18 +16,19 @@ export default function SubmitComments({ article_id }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post(
-      "https://nc-news-53nl.onrender.com/api/articles/" +
-        article_id +
-        "/comments",
+    axios
+      .post(
+        "https://nc-news-53nl.onrender.com/api/articles/" +
+          article_id +
+          "/comments",
         newComment
-    )
-    .then(() => {
-      setHasCommentSubmitted(true);
-    })
-    .catch((error) => {
-      console.log(error)
-    })
+      )
+      .then(() => {
+        setHasCommentSubmitted(true);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   if (hasCommentSubmitted) {

@@ -2,8 +2,6 @@ import Card from "react-bootstrap/Card";
 import { useState } from "react";
 import { deleteCommentByCommentId } from "../api";
 
-
-
 export default function ({ comment }) {
   const [votes, setVotes] = useState(0);
   const [buttonClicked, setButtonClicked] = useState(false);
@@ -34,7 +32,6 @@ export default function ({ comment }) {
 
   const user = 'grumpy19';
  
-
   const readableDate = new Date(comment.created_at);
   const formatDate = readableDate.toDateString();
 

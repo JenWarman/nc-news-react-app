@@ -1,6 +1,6 @@
 import ArticleCards from "./ArticleCards";
 import { useEffect, useState } from "react";
-
+import Spinner from "react-bootstrap/Spinner";
 import { fetchArticles } from "../api";
 
 export default function ListArticles() {
@@ -30,7 +30,9 @@ export default function ListArticles() {
           return <ArticleCards key={article.article_id} article={article} />;
         })
       ) : (
-        <p>articles here...</p>
+        <Spinner animation="border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
       )}
     </div>
   );

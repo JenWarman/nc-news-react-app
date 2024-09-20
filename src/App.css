@@ -10,7 +10,7 @@
 .header {
   padding: 10px;
   margin: auto;
-  background-color: #B8001F;
+  background-color: #b8001f;
   color: #ffff;
   text-decoration: none;
   font-weight: 900;
@@ -25,7 +25,7 @@ h2 {
 }
 
 #userlogin {
-  border:#B8001F solid 2px;
+  border: #b8001f solid 2px;
   font-family: "Open Sans", sans-serif;
 }
 .search-container {
@@ -36,7 +36,7 @@ h2 {
   font-family: "Open Sans", sans-serif;
 }
 .topic-button {
-  background-color: #B8001F;
+  background-color: #b8001f;
   color: #ffff;
   margin: 10px;
   flex-grow: 1rem;
@@ -87,7 +87,7 @@ h2 {
 }
 
 .article-container {
-  border: solid 3px #B8001F;
+  border: solid 3px #b8001f;
   margin: 5px;
   display: flex;
   flex-wrap: wrap;
@@ -175,13 +175,13 @@ button {
 }
 
 #submit-comment-button {
-  background-color: #B8001F;
+  background-color: #b8001f;
   color: #ffff;
 }
 
 .submit-comment {
   margin: 5px;
-  border: #B8001F 2px solid;
+  border: #b8001f 2px solid;
 }
 
 #comment-submit-confirmation {
@@ -189,7 +189,7 @@ button {
 }
 
 #sign-in-button {
-  background-color: #B8001F;
+  background-color: #b8001f;
   color: #ffff;
   border-radius: 10%;
   margin-left: 10px;
@@ -216,9 +216,20 @@ button {
 }
 
 .card-title {
-  color: black
+  color: black;
+}
+.page-404 {
+  display: flex;
+  justify-content: center;
 }
 
+#page-not-found {
+  margin: 50px;
+}
+
+#magnifying-glass {
+  margin-left: 10px;
+}
 @media all and (max-width: 600px) {
   .article-card {
     margin: auto;

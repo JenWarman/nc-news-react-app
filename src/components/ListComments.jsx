@@ -30,7 +30,14 @@ export default function ListComments({ article_id }) {
       <h3 id="comments-header">Comments</h3>
       {comments.length >= 1 ? (
         comments.map((comment, index) => {
-          return <CommentCard key={index} comment={comment} newComment={newComment} setNewComment={setNewComment}/>;
+          return (
+            <CommentCard
+              key={index}
+              comment={comment}
+              newComment={newComment}
+              setNewComment={setNewComment}
+            />
+          );
         })
       ) : (
         <p>There are not comments for this post yet.</p>
