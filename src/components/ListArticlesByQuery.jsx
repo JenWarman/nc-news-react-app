@@ -17,9 +17,8 @@ useEffect(()=> {
     })
 }, [sort_by])
 
-console.log(currentQuery)
     return (
-        <div>
+        <div className="card-container">
            {currentQuery ? (
             currentQuery.map((article)=> {
                 return <ArticleCards key={article.article_id} article={article} />;
