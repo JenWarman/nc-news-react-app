@@ -8,7 +8,7 @@ export default function ArticleCards({ article }) {
 
   return (
       <div className="article-card">
-        <Card className="item-card" style={{ width: "18rem", color: "black", borderColor: 'maroon' }}>
+        <Card className="item-card" style={{ width: "18rem", color: "black", borderColor: 'red' }}>
           <Card.Img
             variant="top"
             src={article.article_img_url}
