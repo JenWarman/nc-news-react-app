@@ -5,12 +5,14 @@ import ListComments from "./ListComments";
 import { Link } from "react-router-dom";
 import SubmitComments from "./SubmitComments";
 import { fetchArticleById } from "../api";
+import { useNavigate } from "react-router-dom";
 
 export default function SingleArticleCard() {
   const [articleById, setArticleById] = useState([]);
   const [votes, setVotes] = useState(0);
   const { article_id } = useParams();
   const [buttonClicked, setButtonClicked] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (article_id) {
@@ -19,7 +21,7 @@ export default function SingleArticleCard() {
           setArticleById(data[0]);
         })
         .catch((error) => {
-          console.log(error);
+          return navigate(`/${error.status}`);
         });
     }
   }, []);

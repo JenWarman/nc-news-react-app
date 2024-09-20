@@ -11,25 +11,28 @@ export default function UserLogin() {
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault()
+    event.preventDefault();
     setUserSet(true);
     fetchAllUsers()
-    .then((users) => {
-      const matchingUser = users.find((user)=> {
-        return user.username === userLogin
+      .then((users) => {
+        const matchingUser = users.find((user) => {
+          return user.username === userLogin;
+        });
+        setCurrentUser(matchingUser);
       })
-      setCurrentUser(matchingUser)
-    })
-    .catch((error) => {
-      console.log(error);
-    })
+      .catch((error) => {
+        console.log(error);
+      });
   };
- 
+
   if (currentUser) {
     return (
       <div className="user-login-container">
-        <img id="profile-pic" src={currentUser.avatar_url} 
-        alt={currentUser.username}/>
+        <img
+          id="profile-pic"
+          src={currentUser.avatar_url}
+          alt={currentUser.username}
+        />
         <p id="profile-user">{currentUser.username}</p>
       </div>
     );
@@ -37,8 +40,9 @@ export default function UserLogin() {
 
   return (
     <>
-      <form className="user-login-form"onSubmit={handleSubmit}>
-        <input id='us'
+      <form className="user-login-form" onSubmit={handleSubmit}>
+        <input
+          id="us"
           placeholder="username"
           onChange={handleChange}
           name="username"
