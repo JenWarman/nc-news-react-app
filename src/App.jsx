@@ -8,6 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route } from "react-router-dom";
 import SingleArticleCard from "./components/SingleArticleCard";
 import TopicPage from "./components/TopicPage";
+import ListArticlesByQuery from "./components/ListArticlesByQuery";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/topic/:topic" element={<TopicPage/>}></Route>
+        <Route path='/sort_by/:query' element={<ListArticlesByQuery/>}></Route>
         <Route path="/" element={<ListArticles />}></Route>
         <Route path="/article/:article_id" element={<SingleArticleCard />}></Route>
       </Routes>
