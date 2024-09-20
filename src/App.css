@@ -3,38 +3,53 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
 }
 
 .header {
   padding: 10px;
   margin: auto;
-  background-color: rgb(0, 94, 255);
+  background-color: #B8001F;
   color: #ffff;
   text-decoration: none;
+  font-weight: 900;
+  font-size: 8rem;
+  font-family: "Gowun Batang", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+h2 {
+  font-family: "Open Sans", sans-serif;
+  padding-bottom: 5px;
 }
 
+#userlogin {
+  border:#B8001F solid 2px;
+  font-family: "Open Sans", sans-serif;
+}
 .search-container {
   display: flex;
   flex-wrap: wrap;
   padding: 10px;
-  align-items: center;
+  justify-content: center;
+  font-family: "Open Sans", sans-serif;
 }
 .topic-button {
-  background-color: rgb(0, 94, 255);
+  background-color: #B8001F;
   color: #ffff;
   margin: 10px;
-  border-radius: 10%;
   flex-grow: 1rem;
 }
+
 .card-container {
-  border: solid 3px rgb(0, 94, 255);
   margin: 5px;
   display: flex;
   flex-wrap: wrap;
 }
 .article-card {
   display: flex;
-  padding: 2rem;
+  padding: 1rem;
   margin: 1rem;
   align-content: center;
 }
@@ -43,12 +58,9 @@
   background-color: rgb(212, 209, 209);
   padding: 10px;
   text-align: left;
+  font-family: "Open Sans", sans-serif;
 }
 
-.user-login {
-  border: solid black 3px;
-  padding: 10px;
-}
 .votes-and-likes {
   display: flex;
 }
@@ -75,7 +87,7 @@
 }
 
 .article-container {
-  border: solid 3px #30475e;
+  border: solid 3px #B8001F;
   margin: 5px;
   display: flex;
   flex-wrap: wrap;
@@ -94,6 +106,7 @@
 
 #article-body {
   margin-top: 10px;
+  text-align: justify;
 }
 
 .topic {
@@ -132,7 +145,8 @@ p.topic.card-text {
 }
 
 #article-votes-container {
-  display: inline-flex;
+  display: flex;
+  justify-content: center;
 }
 
 .individual-comment-card {
@@ -149,25 +163,25 @@ button {
 }
 
 .comment-form-container {
-  border: solid 3px #30475e;
   margin: 5px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .form-container {
-  display: flex;
   padding: 1rem;
   margin: 1rem;
-  align-content: center;
+  justify-content: center;
 }
 
 #submit-comment-button {
-  background-color: black;
+  background-color: #B8001F;
   color: #ffff;
 }
 
 .submit-comment {
   margin: 5px;
+  border: #B8001F 2px solid;
 }
 
 #comment-submit-confirmation {
@@ -175,7 +189,7 @@ button {
 }
 
 #sign-in-button {
-  background-color: black;
+  background-color: #B8001F;
   color: #ffff;
   border-radius: 10%;
   margin-left: 10px;
@@ -201,6 +215,9 @@ button {
   margin: 1rem;
 }
 
+.card-title {
+  color: black
+}
 
 @media all and (max-width: 600px) {
   .article-card {

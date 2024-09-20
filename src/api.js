@@ -15,6 +15,29 @@ export const fetchArticlesByTopic = (topic) => {
         })
 };
 
+export const fetchArticlesBySortBy = (sort_by) => {
+    return api.get('/articles', {params: {sort_by}})
+    .then((response)=> {
+        return response.data.articles;
+    })
+    .catch((error) => {
+        console.log(error, '<---error in fetch articles by sortBy');
+        throw error;
+    })
+}
+
+export const fetchAllUsers = () => {
+    return api.get('/users')
+    .then((response)=> {
+        return response.data.rows;
+    })
+    .catch((error) => {
+        console.log(error, '<---error in fetch all users');
+        throw error;
+    })
+}
+
+
 export const deleteCommentByCommentId = (comment_id) => {
     return api.delete(`/comments/${comment_id}`)
     .then((response) => {

@@ -1,25 +1,36 @@
 import { useState } from "react";
+import { fetchAllUsers } from "../api";
 
 export default function UserLogin() {
   const [userLogin, setUserLogin] = useState("");
   const [userSet, setUserSet] = useState(false);
-
-  const usernameHardCoded = "grumpy19";
+  const [currentUser, setCurrentUser] = useState(null);
 
   const handleChange = (event) => {
     setUserLogin(event.target.value);
   };
 
   const handleSubmit = (event) => {
+    event.preventDefault()
     setUserSet(true);
+    fetchAllUsers()
+    .then((users) => {
+      const matchingUser = users.find((user)=> {
+        return user.username === userLogin
+      })
+      setCurrentUser(matchingUser)
+    })
+    .catch((error) => {
+      console.log(error);
+    })
   };
-
-  if (userSet) {
+ 
+  if (currentUser) {
     return (
       <div className="user-login-container">
-        <img id="profile-pic" src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=1443&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-        alt="black and white cat with a green background"/>
-        <p id="profile-user">{userLogin}</p>
+        <img id="profile-pic" src={currentUser.avatar_url} 
+        alt={currentUser.username}/>
+        <p id="profile-user">{currentUser.username}</p>
       </div>
     );
   }
@@ -27,7 +38,7 @@ export default function UserLogin() {
   return (
     <>
       <form className="user-login-form"onSubmit={handleSubmit}>
-        <input
+        <input id='us'
           placeholder="username"
           onChange={handleChange}
           name="username"
