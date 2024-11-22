@@ -8,5 +8,7 @@ Deployed version - https://main--relaxed-lamington-26e90b.netlify.app/
 2. git clone https://github.com/JenWarman/nc-news-react-app
 3. cd into NC-NEWS REACT APP.
 
+The backend project can be found here - https://github.com/JenWarman/nc-news
+
 
 This portfolio project was created as part of a Digital Skills Bootcamp in Software Engineering provided by [Northcoders](https://northcoders.com/)
